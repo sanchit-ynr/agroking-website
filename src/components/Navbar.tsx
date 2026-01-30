@@ -45,8 +45,8 @@ export function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-4 text-sm font-medium text-slate md:flex">
-          <div className="glass flex items-center gap-5 rounded-full px-5 py-2">
+        <nav className="hidden items-center gap-4 text-base font-semibold text-slate md:flex">
+          <div className="glass flex items-center gap-6 rounded-full px-6 py-2.5">
             {navItems.map((item) => (
               <Link
                 key={item.href}
