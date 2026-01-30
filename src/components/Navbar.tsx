@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/Button";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -34,7 +36,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-sand/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 md:py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-6 py-3 md:py-4">
         <Link href="/" className="flex items-center gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sand">
             {site.shortName.slice(0, 1)}
@@ -60,12 +62,14 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitch />
+          <ThemeToggle />
           <Button href="/contact" variant="secondary" size="sm">
             Get Quote
           </Button>
         </div>
 
-        <div className="relative flex items-center gap-3 md:hidden">
+        <div className="relative flex items-center gap-2 md:hidden">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-2">
             {mobilePrimary.map((item) => (
               <Link
@@ -97,7 +101,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -6, scale: 0.98 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="absolute right-0 top-12 w-40 rounded-2xl border border-white/50 bg-white/75 p-3 shadow-lift backdrop-blur-2xl"
+                className="absolute right-0 top-12 w-48 rounded-2xl border border-sand/60 bg-sand/90 p-3 shadow-lift backdrop-blur-2xl"
               >
                 <div className="space-y-2">
                   {mobileSecondary.map((item) => (
@@ -110,6 +114,10 @@ export function Navbar() {
                       {item.label}
                     </Link>
                   ))}
+                </div>
+                <div className="mt-4 flex items-center justify-between">
+                  <LanguageSwitch compact />
+                  <ThemeToggle />
                 </div>
               </motion.div>
             ) : null}
