@@ -57,14 +57,14 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-ink">
                   <Trans text="Business hours" />
                 </h3>
-                <p className="mt-3 text-sm text-slate">{site.contact.hours}</p>
+                <p className="mt-3 text-sm text-slate"><Trans text={site.contact.hours} /></p>
               </Card>
               <div className="rounded-2xl border border-ink/10 bg-white p-6">
                 <p className="text-xs font-semibold uppercase text-slate">
                   <Trans text="Map placeholder" />
                 </p>
                 <div className="mt-4 h-40 rounded-xl border border-ink/10 bg-sand" />
-                <p className="mt-4 text-sm text-slate">{site.contact.address}</p>
+                <p className="mt-4 text-sm text-slate"><Trans text={site.contact.address} /></p>
               </div>
             </div>
           </div>

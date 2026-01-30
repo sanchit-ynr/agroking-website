@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { useLang } from "@/components/LanguageProvider";
 import { t } from "@/content/i18n";
