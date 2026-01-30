@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/Button";
 import { site } from "@/content/site";
@@ -31,28 +31,6 @@ const mobileSecondary = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-
-  useEffect(() => {
-    let lastY = window.scrollY;
-    const onScroll = () => {
-      const current = window.scrollY;
-      const scrollingDown = current > lastY + 6;
-      const scrollingUp = current < lastY - 6;
-
-      if (scrollingDown && current > 80) {
-        setHidden(true);
-        setOpen(false);
-      } else if (scrollingUp) {
-        setHidden(false);
-      }
-
-      lastY = current;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-sand/80 backdrop-blur-xl">
@@ -87,11 +65,7 @@ export function Navbar() {
           </Button>
         </div>
 
-        <motion.div
-          className="relative flex items-center gap-3 md:hidden"
-          animate={{ opacity: hidden ? 0 : 1, y: hidden ? -12 : 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        >
+        <div className="relative flex items-center gap-3 md:hidden">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-2">
             {mobilePrimary.map((item) => (
               <Link
@@ -104,15 +78,15 @@ export function Navbar() {
             ))}
             <motion.button
               type="button"
-              whileTap={{ scale: 0.92 }}
+              whileTap={{ scale: 0.96 }}
               onClick={() => setOpen((prev) => !prev)}
               className={cn(
-                "flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-white/70 text-base text-ink transition-all",
-                open ? "scale-95" : "hover:scale-105"
+                "px-2 py-1 text-xs font-semibold text-ink/80 transition-opacity",
+                open ? "opacity-60" : "opacity-80 hover:opacity-100"
               )}
-              aria-label="More"
+              aria-label="Open menu"
             >
-              ≡
+              •••
             </motion.button>
           </div>
 
@@ -123,18 +97,15 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -6, scale: 0.98 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="absolute right-0 top-14 w-56 rounded-2xl border border-white/50 bg-white/75 p-3 shadow-lift backdrop-blur-2xl"
+                className="absolute right-0 top-12 w-40 rounded-2xl border border-white/50 bg-white/75 p-3 shadow-lift backdrop-blur-2xl"
               >
-                <p className="px-2 pb-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-slate">
-                  More
-                </p>
                 <div className="space-y-2">
                   {mobileSecondary.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block rounded-xl border border-white/40 bg-white/70 px-3 py-2 text-xs font-semibold text-ink transition-transform hover:-translate-y-0.5"
+                      className="block px-2 py-1 text-xs font-semibold text-ink/90 transition-colors hover:text-ink"
                     >
                       {item.label}
                     </Link>
@@ -143,7 +114,7 @@ export function Navbar() {
               </motion.div>
             ) : null}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </header>
   );
