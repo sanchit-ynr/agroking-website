@@ -18,13 +18,10 @@ export default function SupportPage() {
       <div className="mx-auto max-w-6xl space-y-14 px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow={<Trans en="Support" hi="सहायता" />}
-            title={<Trans en="After-sales service built for export partners" hi="निर्यात भागीदारों के लिए आफ्टर‑सेल्स" />}
+            eyebrow={<Trans text="Support" />}
+            title={<Trans text="After-sales service built for export partners" />}
             subtitle={
-              <Trans
-                en="Warranty coverage, spares availability, and service response you can rely on."
-                hi="वारंटी, स्पेयर्स और तेज़ सेवा सहायता।"
-              />
+              <Trans text="Warranty coverage, spares availability, and service response you can rely on." />
             }
           />
         </FadeIn>
@@ -33,41 +30,32 @@ export default function SupportPage() {
           <div className="grid gap-6 md:grid-cols-3">
             <Card>
               <h3 className="text-lg font-semibold text-ink">
-                <Trans en="Warranty" hi="वारंटी" />
+                <Trans text="Warranty" />
               </h3>
               <p className="mt-3 text-sm text-slate">
-                <Trans
-                  en="Standard 12-month warranty coverage with optional extended plans."
-                  hi="मानक 12‑महीने की वारंटी और वैकल्पिक एक्सटेंडेड प्लान।"
-                />
+                <Trans text="Standard 12-month warranty coverage with optional extended plans." />
               </p>
             </Card>
             <Card>
               <h3 className="text-lg font-semibold text-ink">
-                <Trans en="Spare Parts" hi="स्पेयर पार्ट्स" />
+                <Trans text="Spare Parts" />
               </h3>
               <p className="mt-3 text-sm text-slate">
-                <Trans
-                  en="Dedicated spares program with fast dispatch and dealer stocking guidance."
-                  hi="तेज़ डिस्पैच और डीलर स्टॉकिंग गाइडेंस के साथ।"
-                />
+                <Trans text="Dedicated spares program with fast dispatch and dealer stocking guidance." />
               </p>
             </Card>
             <Card>
               <h3 className="text-lg font-semibold text-ink">
-                <Trans en="Brochures" hi="ब्रॉशर" />
+                <Trans text="Brochures" />
               </h3>
               <p className="mt-3 text-sm text-slate">
-                <Trans
-                  en="Download the latest product brochures and technical sheets."
-                  hi="नवीनतम ब्रॉशर और तकनीकी शीट डाउनलोड करें।"
-                />
+                <Trans text="Download the latest product brochures and technical sheets." />
               </p>
               <Link
                 href="/brochure"
                 className="mt-4 inline-flex text-xs font-semibold uppercase tracking-wide text-ink"
               >
-                <Trans en="View brochures" hi="ब्रॉशर देखें" />
+                <Trans text="View brochures" />
               </Link>
             </Card>
           </div>
@@ -76,25 +64,22 @@ export default function SupportPage() {
         <FadeIn>
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
-              <SectionHeading title={<Trans en="Frequently asked questions" hi="अक्सर पूछे प्रश्न" />} />
+              <SectionHeading title={<Trans text="Frequently asked questions" />} />
               <div className="space-y-4">
                 {site.faqs.map((faq) => (
                   <Card key={faq.question}>
-                    <p className="text-sm font-semibold text-ink">{faq.question}</p>
-                    <p className="mt-2 text-sm text-slate">{faq.answer}</p>
+                    <p className="text-sm font-semibold text-ink"><Trans text={faq.question} /></p>
+                    <p className="mt-2 text-sm text-slate"><Trans text={faq.answer} /></p>
                   </Card>
                 ))}
               </div>
             </div>
             <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-soft">
               <h3 className="text-lg font-semibold text-ink">
-                <Trans en="Service request" hi="सेवा अनुरोध" />
+                <Trans text="Service request" />
               </h3>
               <p className="mt-2 text-sm text-slate">
-                <Trans
-                  en="Share product model, serial number, and issue details for fast support."
-                  hi="मॉडल, सीरियल नंबर और समस्या विवरण साझा करें।"
-                />
+                <Trans text="Share product model, serial number, and issue details for fast support." />
               </p>
               <div className="mt-6">
                 <LeadForm formType="support" />

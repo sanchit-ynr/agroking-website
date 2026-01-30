@@ -4,17 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLang } from "@/components/LanguageProvider";
+import { languageLabels, type Lang } from "@/content/i18n";
 
-const others = [
-  { code: "pa", label: "ਪੰਜਾਬੀ" },
-  { code: "ta", label: "தமிழ்" },
-  { code: "te", label: "తెలుగు" },
-  { code: "mr", label: "मराठी" },
-  { code: "gu", label: "ગુજરાતી" },
-  { code: "bn", label: "বাংলা" },
-  { code: "kn", label: "ಕನ್ನಡ" },
-  { code: "ml", label: "മലയാളം" },
-];
+const allLanguages: Lang[] = ["en", "hi", "pa", "ta", "te", "mr", "gu", "bn", "kn", "ml"];
 
 export function LanguageSwitch({ compact }: { compact?: boolean }) {
   const { lang, setLang } = useLang();
@@ -54,13 +46,21 @@ export function LanguageSwitch({ compact }: { compact?: boolean }) {
             className="absolute right-0 top-12 w-44 rounded-2xl border border-sand/60 bg-sand/90 p-3 shadow-lift backdrop-blur-2xl"
           >
             <div className="space-y-2">
-              {others.map((item) => (
-                <div
-                  key={item.code}
-                  className="block w-full px-2 py-1 text-left text-xs font-semibold text-ink/90"
+              {allLanguages.map((code) => (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => {
+                    setLang(code);
+                    setOpen(false);
+                  }}
+                  className={cn(
+                    "block w-full px-2 py-1 text-left text-xs font-semibold transition-colors",
+                    lang === code ? "text-ink" : "text-ink/80 hover:text-ink"
+                  )}
                 >
-                  {item.label}
-                </div>
+                  {languageLabels[code]}
+                </button>
               ))}
             </div>
           </motion.div>
