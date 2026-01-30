@@ -24,7 +24,7 @@ export function LanguageSwitch({ compact }: { compact?: boolean }) {
           )}
           aria-label="Switch between English and Hindi"
         >
-          EN/हिं
+          EN/हिंदी
         </button>
         <button
           type="button"

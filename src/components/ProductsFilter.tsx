@@ -57,7 +57,7 @@ export function ProductsFilter() {
         </div>
         <div className="hidden w-full md:block md:max-w-xs">
           <label className="sr-only" htmlFor="product-search">
-            Search products
+            {t(lang, "Search products")}
           </label>
           <input
             id="product-search"
