@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductsFilter } from "@/components/ProductsFilter";
 import { FadeIn } from "@/components/FadeIn";
@@ -28,8 +29,23 @@ export default function ProductsPage() {
             <p className="mt-2 text-sm text-slate">Browse implements by category and HP range.</p>
           </div>
         </FadeIn>
+
         <FadeIn delay={0.1}>
           <ProductsFilter />
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <div className="rounded-2xl border border-ink/10 bg-white p-6 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">Brochures</p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-ink">Need detailed specs?</h2>
+            <p className="mt-2 text-sm text-slate">Browse the brochure library for every implement.</p>
+            <Link
+              href="/brochure"
+              className="mt-4 inline-flex rounded-full border border-ink/10 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-ink"
+            >
+              View brochures
+            </Link>
+          </div>
         </FadeIn>
       </div>
     </div>

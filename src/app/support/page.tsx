@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/content/site";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Card } from "@/components/Card";
@@ -37,10 +38,16 @@ export default function SupportPage() {
               </p>
             </Card>
             <Card>
-              <h3 className="text-lg font-semibold text-ink">Service Requests</h3>
+              <h3 className="text-lg font-semibold text-ink">Brochures</h3>
               <p className="mt-3 text-sm text-slate">
-                Submit service queries for installation, troubleshooting, or parts.
+                Download the latest product brochures and technical sheets.
               </p>
+              <Link
+                href="/brochure"
+                className="mt-4 inline-flex text-xs font-semibold uppercase tracking-wide text-ink"
+              >
+                View brochures
+              </Link>
             </Card>
           </div>
         </FadeIn>
