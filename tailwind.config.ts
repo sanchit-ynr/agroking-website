@@ -7,11 +7,11 @@ export default {
       colors: {
         ink: "#1B1C19",
         charcoal: "#2A2D2A",
-        sand: "#F7F4EE",
-        gold: "#F28C28",
-        bronze: "#B5661D",
+        sand: "#F4F4F0",
+        gold: "#F07A1C",
+        bronze: "#9A4F14",
         slate: "#6C726A",
-        smoke: "#E8E1D3",
+        smoke: "#EAEAE2",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
