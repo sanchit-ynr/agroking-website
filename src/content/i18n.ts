@@ -1113,7 +1113,7 @@ export const translations: Record<string, Record<Lang, string>> = {
     ml: "പൂർണ്ണ പേര്",
   },
   "Email": {
-    en: ,
+    en: "Email",
     hi: "ईमेल",
     pa: "ਈਮੇਲ",
     ta: "மின்னஞ்சல்",
@@ -1124,7 +1124,18 @@ export const translations: Record<string, Record<Lang, string>> = {
     kn: "ಇಮೇಲ್",
     ml: "ഇമെയിൽ",
   },
-  "Email address"
+  "Email address": {
+    en: "Email address",
+    hi: "ईमेल पता",
+    pa: "ਈਮੇਲ ਪਤਾ",
+    ta: "மின்னஞ்சல் முகவரி",
+    te: "ఇమెయిల్ చిరునామా",
+    mr: "ईमेल पत्ता",
+    gu: "ઇમેઇલ સરનામું",
+    bn: "ইমেইল ঠিকানা",
+    kn: "ಇಮೇಲ್ ವಿಳಾಸ",
+    ml: "ഇമെയിൽ വിലാസം",
+  },
   "Phone": {
     en: "Phone",
     hi: "फोन",
