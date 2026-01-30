@@ -26,6 +26,17 @@ export type SiteData = {
   tagline: string;
   descriptionShort: string;
   descriptionLong: string;
+  companyProfile: {
+    proprietor: string;
+    established: string;
+    natureOfBusiness: string;
+    employees: string;
+    marketCovered: string;
+  };
+  companyOverview: string;
+  infrastructure: string;
+  qualityAssurance: string;
+  network: string;
   metrics: Array<{ label: string; value: string }>;
   regionsServed: string[];
   capabilities: string[];
@@ -37,7 +48,14 @@ export type SiteData = {
   applications: Array<{ title: string; items: string[] }>;
   faqs: Array<{ question: string; answer: string }>;
   testimonials: Array<{ name: string; role: string; quote: string }>;
-  contact: { address: string; phone: string; email: string; whatsapp: string; hours: string };
+  contact: {
+    address: string;
+    phone: string;
+    phoneAlt?: string;
+    email: string;
+    whatsapp: string;
+    hours: string;
+  };
   social: Array<{ label: string; url: string }>;
 };
 
@@ -50,6 +68,21 @@ export const site: SiteData = {
     "Premium agricultural implements for global farms, built for durability and precision.",
   descriptionLong:
     "Agroking Implements Industries (Agroking) designs and manufactures rugged, export-ready farm implements with consistent quality, high throughput, and reliable after-sales support. Our facilities focus on precision fabrication, rigorous testing, and dependable delivery for dealers and distributors worldwide.",
+  companyProfile: {
+    proprietor: "Mr. Vivek Sanan",
+    established: "1971",
+    natureOfBusiness: "Manufacturer & Supplier",
+    employees: "50",
+    marketCovered: "Domestic",
+  },
+  companyOverview:
+    "Agroking Implements Industries is experiencing growth at an accelerated pace since its inception in 1971 under the guidance of proprietor Mr. Vivek Sanan. The company has earned a distinguished position among trusted manufacturers and suppliers of agricultural implements.",
+  infrastructure:
+    "Our state-of-the-art infrastructure is backed by technologically advanced tools and machines that assist in quality and quantity production of agricultural implements.",
+  qualityAssurance:
+    "Stringent quality tests are conducted under the supervision of quality control executives, from production to final packaging to ensure zero manufacturing defects.",
+  network:
+    "A well-established business network across regions of India ensures timely transit and reliable supply.",
   metrics: [
     { label: "Years of Manufacturing", value: "18+" },
     { label: "Export Markets", value: "26" },
@@ -315,7 +348,8 @@ export const site: SiteData = {
   contact: {
     address: "Old Saharanpur Road, near Saraswati Sugar Mill, Indira Market, Yamuna Nagar, Haryana 135001, India",
     phone: "+91 98962 40414",
-    email: "export@agroking.example",
+    phoneAlt: "+91-1732-250598",
+    email: "agroking@yahoo.com",
     whatsapp: "+91 98962 40414",
     hours: "Tue - Sun: 9:00 AM - 6:00 PM (IST)",
   },

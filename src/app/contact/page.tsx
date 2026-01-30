@@ -28,6 +28,9 @@ export default function ContactPage() {
             <Card>
               <h3 className="text-lg font-semibold text-ink">Direct lines</h3>
               <p className="mt-3 text-sm text-slate">{site.contact.phone}</p>
+              {site.contact.phoneAlt ? (
+                <p className="text-sm text-slate">{site.contact.phoneAlt}</p>
+              ) : null}
               <p className="text-sm text-slate">{site.contact.email}</p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <Button variant="secondary" size="sm" href="#">

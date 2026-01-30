@@ -42,6 +42,7 @@ export function Footer() {
           <p className="font-semibold text-sand">Contact</p>
           <ul className="space-y-2 text-sand/70">
             <li>{site.contact.phone}</li>
+            {site.contact.phoneAlt ? <li>{site.contact.phoneAlt}</li> : null}
             <li>{site.contact.email}</li>
             <li>{site.contact.hours}</li>
           </ul>
@@ -53,7 +54,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-sand/10 py-4 text-center text-xs text-sand/50">
-        © {new Date().getFullYear()} {site.shortName}. All rights reserved.
+        <p>© Copyright 2010 - 2010. Agroking Implements Industries</p>
+        <p className="mt-1">Developed &amp; Managed By Weblink.In Pvt. Ltd.</p>
       </div>
     </footer>
   );

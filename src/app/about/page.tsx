@@ -16,33 +16,45 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="About Agroking"
           title="Manufacturing excellence for global agriculture"
-          subtitle={site.descriptionLong}
+          subtitle={site.companyOverview}
         />
 
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <h3 className="text-lg font-semibold text-ink">Our Story</h3>
-            <p className="mt-3 text-sm text-slate">
-              From a focused fabrication unit to an export-ready manufacturing partner, Agroking
-              has scaled through precision systems, skilled craftsmanship, and relentless quality
-              auditing.
-            </p>
+            <p className="mt-3 text-sm text-slate">{site.companyOverview}</p>
           </Card>
           <Card>
-            <h3 className="text-lg font-semibold text-ink">Quality Promise</h3>
-            <p className="mt-3 text-sm text-slate">
-              Every implement undergoes multi-stage testing, finishing checks, and export packaging
-              validation before dispatch.
-            </p>
+            <h3 className="text-lg font-semibold text-ink">Infrastructure</h3>
+            <p className="mt-3 text-sm text-slate">{site.infrastructure}</p>
           </Card>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {site.capabilities.map((capability) => (
-            <Card key={capability}>
-              <p className="text-sm font-semibold text-ink">{capability}</p>
-            </Card>
-          ))}
+          <Card>
+            <p className="text-xs uppercase tracking-wide text-slate">Proprietor</p>
+            <p className="mt-2 text-sm font-semibold text-ink">{site.companyProfile.proprietor}</p>
+          </Card>
+          <Card>
+            <p className="text-xs uppercase tracking-wide text-slate">Established</p>
+            <p className="mt-2 text-sm font-semibold text-ink">{site.companyProfile.established}</p>
+          </Card>
+          <Card>
+            <p className="text-xs uppercase tracking-wide text-slate">Nature of Business</p>
+            <p className="mt-2 text-sm font-semibold text-ink">{site.companyProfile.natureOfBusiness}</p>
+          </Card>
+          <Card>
+            <p className="text-xs uppercase tracking-wide text-slate">Employees</p>
+            <p className="mt-2 text-sm font-semibold text-ink">{site.companyProfile.employees}</p>
+          </Card>
+          <Card>
+            <p className="text-xs uppercase tracking-wide text-slate">Market Covered</p>
+            <p className="mt-2 text-sm font-semibold text-ink">{site.companyProfile.marketCovered}</p>
+          </Card>
+          <Card>
+            <p className="text-xs uppercase tracking-wide text-slate">Quality Assurance</p>
+            <p className="mt-2 text-sm text-slate">{site.qualityAssurance}</p>
+          </Card>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -56,9 +68,7 @@ export default function AboutPage() {
             />
             <div className="mt-4 space-y-2">
               <h3 className="text-lg font-semibold text-ink">Factory-ready production</h3>
-              <p className="text-sm text-slate">
-                CNC cutting, robotic welding, and controlled powder coating for long service life.
-              </p>
+              <p className="text-sm text-slate">{site.network}</p>
             </div>
           </div>
           <Card>
