@@ -9,14 +9,14 @@ interface ProductGridProps {
 
 export function ProductGrid({ products }: ProductGridProps) {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {products.map((product) => (
         <Link
           key={product.slug}
           href={`/products/${product.slug}`}
-          className="group rounded-xl border border-ink/10 bg-white p-5 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
+          className="group rounded-2xl border border-ink/10 bg-white p-4 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
         >
-          <div className="overflow-hidden rounded-lg border border-ink/10">
+          <div className="overflow-hidden rounded-xl border border-ink/10">
             <Image
               src={product.images[0]}
               alt={product.name}
@@ -30,14 +30,18 @@ export function ProductGrid({ products }: ProductGridProps) {
               {site.productCategories.find((cat) => cat.id === product.category)
                 ?.name ?? "Category"}
             </Badge>
-            <h3 className="text-lg font-semibold text-ink">{product.name}</h3>
+            <h3 className="text-base font-semibold text-ink sm:text-lg">{product.name}</h3>
             <p className="text-sm text-slate">{product.shortDescription}</p>
-            <div className="flex flex-wrap gap-2 text-xs text-slate">
-              {product.keySpecs.slice(0, 3).map((spec) => (
+            <div className="flex flex-wrap gap-2 text-[11px] text-slate">
+              {product.keySpecs.slice(0, 2).map((spec) => (
                 <span key={spec} className="rounded-full border border-ink/10 px-3 py-1">
                   {spec}
                 </span>
               ))}
+            </div>
+            <div className="flex items-center justify-between pt-2 text-xs font-semibold text-ink">
+              <span className="rounded-full border border-ink/10 px-3 py-1">{product.hpRange}</span>
+              <span className="text-xs uppercase tracking-wide">View Details</span>
             </div>
           </div>
         </Link>
