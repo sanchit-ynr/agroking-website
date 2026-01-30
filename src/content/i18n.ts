@@ -1354,18 +1354,7 @@ export const translations: Record<string, Record<Lang, string>> = {
     kn: "ಡೀಲರ್ ಪಾಲುದಾರರು",
     ml: "ഡീലർ പങ്കാളികൾ",
   },
-  "Request Quote": {
-    en: "Request Quote",
-    hi: "कोटेशन अनुरोध",
-    pa: "ਕੋਟ ਮੰਗੋ",
-    ta: "கோட் கோருக",
-    te: "కోట్ అభ్యర్థించండి",
-    mr: "कोट विनंती",
-    gu: "ક્વોટ માટે વિનંતી",
-    bn: "কোট অনুরোধ",
-    kn: "ಕೋಟ್ ವಿನಂತಿಸಿ",
-    ml: "ക്വോട്ട് അഭ്യർത്ഥിക്കുക",
-  },
+  
 
   "Export-ready farm implements engineered for modern agriculture.": {
     en: "Export-ready farm implements engineered for modern agriculture.",
@@ -1741,18 +1730,7 @@ export const translations: Record<string, Record<Lang, string>> = {
     kn: "ಸುರಕ್ಷಿತ ಪ್ಯಾಕಿಂಗ್ ಮತ್ತು ಡೆಲಿವರಿ.",
     ml: "സുരക്ഷിത പാക്കിംഗ്, ഡെലിവറി.",
   },
-  "Support": {
-    en: "Support",
-    hi: "सहायता",
-    pa: "ਸਹਾਇਤਾ",
-    ta: "ஆதரவு",
-    te: "సహాయం",
-    mr: "सहायता",
-    gu: "સહાય",
-    bn: "সহায়তা",
-    kn: "ಬೆಂಬಲ",
-    ml: "പിന്തുണ",
-  },
+  
   "Warranty, spares, and service response.": {
     en: "Warranty, spares, and service response.",
     hi: "वारंटी, स्पेयर और सेवा सहायता।",
@@ -1838,18 +1816,7 @@ export const translations: Record<string, Record<Lang, string>> = {
     kn: "ಸಮಾನ ಬೀಜ ಸ್ಥಾಪನೆ ಮತ್ತು ಸಾಲು ತಯಾರಿ.",
     ml: "സമമായ വിത്ത് സ്ഥാപനം, വരി തയ്യാറാക്കൽ.",
   },
-  "Transport": {
-    en: "Transport",
-    hi: "परिवहन",
-    pa: "ਆਵਾਜਾਈ",
-    ta: "போக்குவரத்து",
-    te: "రవాణా",
-    mr: "वाहतूक",
-    gu: "પરિવહન",
-    bn: "পরিবহন",
-    kn: "ಸಾರಿಗೆ",
-    ml: "ഗതാഗതം",
-  },
+  
   "Heavy duty trailers and haulage solutions.": {
     en: "Heavy duty trailers and haulage solutions.",
     hi: "हेवी ड्यूटी ट्रेलर और ढुलाई समाधान।",
