@@ -8,31 +8,33 @@ import { LanguageSwitch } from "@/components/LanguageSwitch";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
+import { useLang } from "@/components/LanguageProvider";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/applications", label: "Applications" },
-  { href: "/about", label: "About" },
-  { href: "/support", label: "Support" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", labelEn: "Home", labelHi: "होम" },
+  { href: "/products", labelEn: "Products", labelHi: "उत्पाद" },
+  { href: "/applications", labelEn: "Applications", labelHi: "उपयोग" },
+  { href: "/about", labelEn: "About", labelHi: "हमारे बारे में" },
+  { href: "/support", labelEn: "Support", labelHi: "सहायता" },
+  { href: "/contact", labelEn: "Contact", labelHi: "संपर्क" },
 ];
 
 const mobilePrimary = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", labelEn: "Home", labelHi: "होम" },
+  { href: "/products", labelEn: "Products", labelHi: "उत्पाद" },
+  { href: "/contact", labelEn: "Contact", labelHi: "संपर्क" },
 ];
 
 const mobileSecondary = [
-  { href: "/applications", label: "Applications" },
-  { href: "/about", label: "About" },
-  { href: "/support", label: "Support" },
-  { href: "/brochure", label: "Brochure" },
+  { href: "/applications", labelEn: "Applications", labelHi: "उपयोग" },
+  { href: "/about", labelEn: "About", labelHi: "हमारे बारे में" },
+  { href: "/support", labelEn: "Support", labelHi: "सहायता" },
+  { href: "/brochure", labelEn: "Brochure", labelHi: "ब्रॉशर" },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { lang } = useLang();
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-sand/80 backdrop-blur-xl">
@@ -55,18 +57,18 @@ export function Navbar() {
                 href={item.href}
                 className="transition-colors hover:text-ink"
               >
-                {item.label}
+                {lang === "hi" ? item.labelHi : item.labelEn}
               </Link>
             ))}
           </div>
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <LanguageSwitch />
-          <ThemeToggle />
           <Button href="/contact" variant="secondary" size="sm">
-            Get Quote
+            {lang === "hi" ? "कोटेशन" : "Get Quote"}
           </Button>
+          <ThemeToggle />
+          <LanguageSwitch />
         </div>
 
         <div className="relative flex items-center gap-2 md:hidden">
@@ -77,7 +79,7 @@ export function Navbar() {
                 href={item.href}
                 className="rounded-full px-3 py-2 text-xs font-semibold text-ink transition-colors hover:bg-white/70"
               >
-                {item.label}
+                {lang === "hi" ? item.labelHi : item.labelEn}
               </Link>
             ))}
             <motion.button
@@ -111,7 +113,7 @@ export function Navbar() {
                       onClick={() => setOpen(false)}
                       className="block px-2 py-1 text-xs font-semibold text-ink/90 transition-colors hover:text-ink"
                     >
-                      {item.label}
+                      {lang === "hi" ? item.labelHi : item.labelEn}
                     </Link>
                   ))}
                 </div>

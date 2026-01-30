@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
 import { FadeIn } from "@/components/FadeIn";
+import { Trans } from "@/components/Trans";
 
 export const metadata: Metadata = {
   title: "Brochure",
@@ -15,9 +16,9 @@ export default function BrochurePage() {
       <div className="mx-auto max-w-4xl space-y-8 px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow="Brochures"
-            title="Download product brochures"
-            subtitle="Placeholder download center. Replace with real PDFs when available."
+            eyebrow={<Trans en="Brochures" hi="ब्रॉशर" />}
+            title={<Trans en="Download product brochures" hi="उत्पाद ब्रॉशर डाउनलोड करें" />}
+            subtitle={<Trans en="Placeholder download center. Replace with real PDFs when available." hi="यह एक डेमो सेक्शन है।" />}
           />
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -32,7 +33,7 @@ export default function BrochurePage() {
                   <p className="text-xs text-slate">{product.shortDescription}</p>
                 </div>
                 <Button variant="secondary" size="sm" href="#">
-                  Download PDF
+                  <Trans en="Download PDF" hi="PDF डाउनलोड" />
                 </Button>
               </div>
             ))}

@@ -5,6 +5,7 @@ import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
 import { LeadForm } from "@/components/LeadForm";
 import { FadeIn } from "@/components/FadeIn";
+import { Trans } from "@/components/Trans";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,9 +18,14 @@ export default function ContactPage() {
       <div className="mx-auto max-w-6xl space-y-12 px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow="Contact"
-            title="Let’s build your export-ready portfolio"
-            subtitle="Share volumes, markets, and timeline. Our export team will respond within 24 hours."
+            eyebrow={<Trans en="Contact" hi="संपर्क" />}
+            title={<Trans en="Let’s build your export-ready portfolio" hi="अपना निर्यात पोर्टफोलियो बनाएं" />}
+            subtitle={
+              <Trans
+                en="Share volumes, markets, and timeline. Our export team will respond within 24 hours."
+                hi="मात्रा, बाजार और टाइमलाइन साझा करें—24 घंटे में जवाब मिलेगा।"
+              />
+            }
           />
         </FadeIn>
 
@@ -30,7 +36,9 @@ export default function ContactPage() {
             </Card>
             <div className="space-y-6">
               <Card>
-                <h3 className="text-lg font-semibold text-ink">Direct lines</h3>
+                <h3 className="text-lg font-semibold text-ink">
+                  <Trans en="Direct lines" hi="सीधा संपर्क" />
+                </h3>
                 <p className="mt-3 text-sm text-slate">{site.contact.phone}</p>
                 {site.contact.phoneAlt ? (
                   <p className="text-sm text-slate">{site.contact.phoneAlt}</p>
@@ -38,22 +46,26 @@ export default function ContactPage() {
                 <p className="text-sm text-slate">{site.contact.email}</p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <Button variant="secondary" size="sm" href="#">
-                    WhatsApp
+                    <Trans en="WhatsApp" hi="व्हाट्सऐप" />
                   </Button>
                   <Button variant="secondary" size="sm" href="#">
-                    Call Us
+                    <Trans en="Call Us" hi="कॉल करें" />
                   </Button>
                   <Button variant="secondary" size="sm" href="#">
-                    Email
+                    <Trans en="Email" hi="ईमेल" />
                   </Button>
                 </div>
               </Card>
               <Card>
-                <h3 className="text-lg font-semibold text-ink">Business hours</h3>
+                <h3 className="text-lg font-semibold text-ink">
+                  <Trans en="Business hours" hi="कार्य समय" />
+                </h3>
                 <p className="mt-3 text-sm text-slate">{site.contact.hours}</p>
               </Card>
               <div className="rounded-2xl border border-ink/10 bg-white p-6">
-                <p className="text-xs font-semibold uppercase text-slate">Map placeholder</p>
+                <p className="text-xs font-semibold uppercase text-slate">
+                  <Trans en="Map placeholder" hi="मैप प्लेसहोल्डर" />
+                </p>
                 <div className="mt-4 h-40 rounded-xl border border-ink/10 bg-sand" />
                 <p className="mt-4 text-sm text-slate">{site.contact.address}</p>
               </div>

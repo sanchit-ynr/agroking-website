@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
+import { LanguageProvider } from "@/components/LanguageProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,9 +44,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body className="font-sans">
-        <Navbar />
-        <main className="overflow-x-hidden">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <main className="overflow-x-hidden">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

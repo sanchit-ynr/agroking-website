@@ -7,6 +7,7 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SpecsTable } from "@/components/SpecsTable";
 import { LeadForm } from "@/components/LeadForm";
+import { Trans } from "@/components/Trans";
 import { FadeIn } from "@/components/FadeIn";
 
 interface ProductDetailProps {
@@ -78,7 +79,7 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
 
           <FadeIn delay={0.15}>
             <div className="space-y-6">
-              <SectionHeading title="Key specifications" />
+              <SectionHeading title={<Trans en="Key specifications" hi="मुख्य स्पेसिफिकेशन" />} />
               <SpecsTable specs={product.specs} />
             </div>
           </FadeIn>
@@ -98,7 +99,7 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
 
           <FadeIn delay={0.25}>
             <div className="rounded-2xl border border-ink/10 bg-white p-6">
-              <p className="text-sm font-semibold uppercase text-slate">Compatible tractor HP</p>
+              <p className="text-sm font-semibold uppercase text-slate"><Trans en="Compatible tractor HP" hi="उपयुक्त ट्रैक्टर HP" /></p>
               <p className="mt-2 text-2xl font-semibold text-ink">{product.hpRange}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {product.keySpecs.map((spec) => (
@@ -115,14 +116,14 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
           <aside className="space-y-6">
             <div className="sticky top-24 space-y-6 rounded-2xl border border-ink/10 bg-white p-6 shadow-soft">
               <div>
-                <h3 className="text-lg font-semibold text-ink">Request a quote</h3>
+                <h3 className="text-lg font-semibold text-ink"><Trans en="Request a quote" hi="कोटेशन अनुरोध" /></h3>
                 <p className="text-sm text-slate">
-                  Share volumes, markets, and branding requirements. We respond within 24 hours.
+                  <Trans en="Share volumes, markets, and branding requirements. We respond within 24 hours." hi="मात्रा, बाजार और ब्रांडिंग साझा करें—24 घंटे में जवाब मिलेगा।" />
                 </p>
               </div>
               <LeadForm formType="quote" compact />
               <Button href={product.brochure} variant="secondary" className="w-full">
-                Download brochure
+                <Trans en="Download brochure" hi="ब्रॉशर डाउनलोड" />
               </Button>
             </div>
           </aside>

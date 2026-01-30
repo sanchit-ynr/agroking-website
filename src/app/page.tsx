@@ -6,6 +6,7 @@ import { Card } from "@/components/Card";
 import { Badge } from "@/components/Badge";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FadeIn } from "@/components/FadeIn";
+import { Trans } from "@/components/Trans";
 
 export default function HomePage() {
   return (
@@ -14,17 +15,27 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <FadeIn>
             <div className="space-y-6">
-              <Badge>Export-ready manufacturing</Badge>
+              <Badge>
+                <Trans en="Export-ready manufacturing" hi="निर्यात-तैयार निर्माण" />
+              </Badge>
               <h1 className="font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-                Premium farm implements engineered for global performance.
+                <Trans
+                  en="Premium farm implements engineered for global performance."
+                  hi="वैश्विक प्रदर्शन के लिए प्रीमियम कृषि उपकरण।"
+                />
               </h1>
-              <p className="text-lg text-slate">{site.descriptionLong}</p>
+              <p className="text-lg text-slate">
+                <Trans
+                  en={site.descriptionLong}
+                  hi="Agroking मजबूत, निर्यात‑तैयार कृषि उपकरण बनाता है जिनमें उच्च गुणवत्ता, टिकाऊपन और भरोसेमंद सपोर्ट शामिल है।"
+                />
+              </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/contact" size="lg">
-                  Get Quote
+                  <Trans en="Get Quote" hi="कोटेशन लें" />
                 </Button>
                 <Button href="/products" variant="secondary" size="lg">
-                  View Products
+                  <Trans en="View Products" hi="उत्पाद देखें" />
                 </Button>
               </div>
               <div className="grid gap-4 pt-6 md:grid-cols-3">
@@ -64,9 +75,14 @@ export default function HomePage() {
       <section className="section bg-white">
         <div className="mx-auto max-w-6xl space-y-10 px-6">
           <SectionHeading
-            eyebrow="Product portfolio"
-            title="Featured categories"
-            subtitle="Comprehensive implements covering soil preparation, tillage, planting, and transport."
+            eyebrow={<Trans en="Product portfolio" hi="उत्पाद पोर्टफोलियो" />}
+            title={<Trans en="Featured categories" hi="प्रमुख श्रेणियाँ" />}
+            subtitle={
+              <Trans
+                en="Comprehensive implements covering soil preparation, tillage, planting, and transport."
+                hi="मिट्टी तैयारी, जुताई, बुवाई और परिवहन के लिए व्यापक समाधान।"
+              />
+            }
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {site.productCategories.map((category) => (
@@ -82,7 +98,7 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-ink">{category.name}</h3>
                   <p className="text-sm text-slate">{category.description}</p>
                   <Link href="/products" className="text-xs font-semibold uppercase text-ink">
-                    Explore
+                    <Trans en="Explore" hi="देखें" />
                   </Link>
                 </div>
               </Card>
@@ -94,9 +110,19 @@ export default function HomePage() {
       <section className="section">
         <div className="mx-auto max-w-6xl space-y-12 px-6">
           <SectionHeading
-            eyebrow="Why Agroking"
-            title="Quality-first manufacturing built for export partners"
-            subtitle="We invest in precision fabrication, robust testing, and reliable delivery cycles to keep your dealers stocked and your customers confident."
+            eyebrow={<Trans en="Why Agroking" hi="क्यों Agroking" />}
+            title={
+              <Trans
+                en="Quality-first manufacturing built for export partners"
+                hi="निर्यात भागीदारों के लिए गुणवत्ता‑प्रधान निर्माण"
+              />
+            }
+            subtitle={
+              <Trans
+                en="We invest in precision fabrication, robust testing, and reliable delivery cycles to keep your dealers stocked and your customers confident."
+                hi="हम सटीक निर्माण, कठोर परीक्षण और भरोसेमंद डिलीवरी पर ध्यान देते हैं।"
+              />
+            }
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {site.values.map((value) => (
@@ -112,9 +138,14 @@ export default function HomePage() {
       <section className="section bg-white">
         <div className="mx-auto max-w-6xl space-y-10 px-6">
           <SectionHeading
-            eyebrow="Process"
-            title="From inquiry to after-sales support"
-            subtitle="A streamlined export workflow that keeps your inventory moving."
+            eyebrow={<Trans en="Process" hi="प्रक्रिया" />}
+            title={<Trans en="From inquiry to after-sales support" hi="इन्क्वायरी से सपोर्ट तक" />}
+            subtitle={
+              <Trans
+                en="A streamlined export workflow that keeps your inventory moving."
+                hi="सरल निर्यात प्रक्रिया जो आपके स्टॉक को चलती रखे।"
+              />
+            }
           />
           <div className="grid gap-6 md:grid-cols-5">
             {site.timeline.map((step, index) => (
@@ -131,9 +162,14 @@ export default function HomePage() {
       <section className="section">
         <div className="mx-auto max-w-6xl space-y-10 px-6">
           <SectionHeading
-            eyebrow="Testimonials"
-            title="Trusted by global distributors"
-            subtitle="Long-term relationships built on reliability and premium finishing."
+            eyebrow={<Trans en="Testimonials" hi="प्रशंसापत्र" />}
+            title={<Trans en="Trusted by global distributors" hi="वैश्विक वितरकों का भरोसा" />}
+            subtitle={
+              <Trans
+                en="Long-term relationships built on reliability and premium finishing."
+                hi="विश्वसनीयता और प्रीमियम फिनिशिंग पर आधारित साझेदारी।"
+              />
+            }
           />
           <div className="grid gap-6 md:grid-cols-3">
             {site.testimonials.map((testimonial) => (
@@ -150,17 +186,22 @@ export default function HomePage() {
       <section className="section bg-ink text-sand">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 md:flex-row md:items-center">
           <div>
-            <h2 className="font-display text-3xl font-semibold">Ready to export with Agroking?</h2>
+            <h2 className="font-display text-3xl font-semibold">
+              <Trans en="Ready to export with Agroking?" hi="Agroking के साथ निर्यात शुरू करें" />
+            </h2>
             <p className="mt-2 text-sm text-sand/70">
-              Share your target markets and volume. We will build a quote within 24 hours.
+              <Trans
+                en="Share your target markets and volume. We will build a quote within 24 hours."
+                hi="अपने बाज़ार और मात्रा साझा करें—हम 24 घंटे में कोटेशन देंगे।"
+              />
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
             <Button href="/contact" size="lg">
-              Request Quote
+              <Trans en="Request Quote" hi="कोटेशन अनुरोध" />
             </Button>
             <Button href="/products" variant="secondary" size="lg">
-              Browse Products
+              <Trans en="Browse Products" hi="उत्पाद देखें" />
             </Button>
           </div>
         </div>

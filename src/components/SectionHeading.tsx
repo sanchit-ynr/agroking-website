@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
-  eyebrow?: string;
-  title: string;
-  subtitle?: string;
+  eyebrow?: React.ReactNode;
+  title: React.ReactNode;
+  subtitle?: React.ReactNode;
   className?: string;
 }
 
@@ -16,9 +16,7 @@ export function SectionHeading({
   return (
     <div className={cn("space-y-3", className)}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-leaf">
-          {eyebrow}
-        </p>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-leaf">{eyebrow}</p>
       ) : null}
       <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
         {title}

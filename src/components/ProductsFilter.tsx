@@ -4,12 +4,14 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { site } from "@/content/site";
 import { ProductGrid } from "@/components/ProductGrid";
+import { useLang } from "@/components/LanguageProvider";
 
 export function ProductsFilter() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [filterOpen, setFilterOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang } = useLang();
 
   const filtered = useMemo(() => {
     return site.products.filter((product) => {
@@ -35,7 +37,7 @@ export function ProductsFilter() {
                 : "border-ink/10 text-slate"
             }`}
           >
-            All
+            {lang === "hi" ? "सभी" : "All"}
           </button>
           {site.productCategories.map((category) => (
             <button
@@ -60,7 +62,7 @@ export function ProductsFilter() {
             id="product-search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search products"
+            placeholder={lang === "hi" ? "उत्पाद खोजें" : "Search products"}
             className="w-full rounded-full border border-ink/10 bg-white px-4 py-2 text-sm text-ink placeholder:text-slate focus:border-gold focus:outline-none"
           />
         </div>
@@ -81,7 +83,7 @@ export function ProductsFilter() {
                 setMenuOpen(false);
               }}
             >
-              Filter
+              {lang === "hi" ? "फ़िल्टर" : "Filter"}
             </button>
             <button
               type="button"
@@ -100,11 +102,13 @@ export function ProductsFilter() {
 
       {filterOpen ? (
         <div className="rounded-2xl border border-ink/10 bg-white p-4 md:hidden">
-          <div className="mb-3 text-xs font-semibold uppercase text-slate">Search</div>
+          <div className="mb-3 text-xs font-semibold uppercase text-slate">
+            {lang === "hi" ? "खोज" : "Search"}
+          </div>
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search products"
+            placeholder={lang === "hi" ? "उत्पाद खोजें" : "Search products"}
             className="w-full rounded-full border border-ink/10 bg-white px-4 py-2 text-sm text-ink placeholder:text-slate focus:border-gold focus:outline-none"
           />
           <div className="mt-4 flex flex-wrap gap-2">
@@ -117,7 +121,7 @@ export function ProductsFilter() {
                   : "border-ink/10 text-slate"
               }`}
             >
-              All
+              {lang === "hi" ? "सभी" : "All"}
             </button>
             {site.productCategories.map((category) => (
               <button
@@ -139,7 +143,9 @@ export function ProductsFilter() {
 
       {menuOpen ? (
         <div className="rounded-2xl border border-ink/10 bg-white p-4 md:hidden">
-          <p className="text-xs font-semibold uppercase text-slate">Categories</p>
+          <p className="text-xs font-semibold uppercase text-slate">
+            {lang === "hi" ? "श्रेणियाँ" : "Categories"}
+          </p>
           <div className="mt-3 grid gap-2">
             <button
               type="button"
@@ -149,7 +155,7 @@ export function ProductsFilter() {
               }}
               className="rounded-xl border border-ink/10 bg-sand px-3 py-2 text-left text-sm font-semibold"
             >
-              All Products
+              {lang === "hi" ? "सभी उत्पाद" : "All Products"}
             </button>
             {site.productCategories.map((category) => (
               <button
