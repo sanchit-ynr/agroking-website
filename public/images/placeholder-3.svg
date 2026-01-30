@@ -1,0 +1,8 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="36" fill="#F4EFE5"/>
+  <rect x="60" y="90" width="680" height="420" rx="28" fill="#E2D5BE"/>
+  <path d="M140 240L660 240" stroke="#1B1C19" stroke-width="10" stroke-linecap="round"/>
+  <path d="M140 320L660 320" stroke="#8A7752" stroke-width="8" stroke-linecap="round"/>
+  <path d="M140 400L660 400" stroke="#C8A85A" stroke-width="6" stroke-linecap="round"/>
+  <text x="80" y="520" fill="#6C726A" font-family="Arial" font-size="22" letter-spacing="3">PRECISION LINE</text>
+</svg>

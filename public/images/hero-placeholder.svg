@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#F1EBDD"/>
+  <rect x="80" y="120" width="1040" height="600" rx="40" fill="#E0D2B6"/>
+  <path d="M160 600L360 420L600 540L860 380L1040 460" stroke="#1B1C19" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="320" cy="660" r="36" fill="#C8A85A"/>
+  <circle cx="820" cy="680" r="28" fill="#C8A85A"/>
+  <text x="100" y="780" fill="#6C726A" font-family="Arial" font-size="28" letter-spacing="4">AGROKING EXPORT SERIES</text>
+</svg>

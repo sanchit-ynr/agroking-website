@@ -1,0 +1,9 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="36" fill="#EFE7DA"/>
+  <rect x="70" y="90" width="660" height="420" rx="32" fill="#D8C9A6"/>
+  <path d="M160 330H640" stroke="#1B1C19" stroke-width="12" stroke-linecap="round"/>
+  <path d="M200 420H600" stroke="#8A7752" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="250" cy="330" r="24" fill="#C8A85A"/>
+  <circle cx="550" cy="330" r="24" fill="#C8A85A"/>
+  <text x="80" y="520" fill="#6C726A" font-family="Arial" font-size="22" letter-spacing="3">EXPORT READY</text>
+</svg>
