@@ -1,8 +1,9 @@
 "use client";
 
 import { useLang } from "@/components/LanguageProvider";
+import { t } from "@/content/i18n";
 
-export function Trans({ en, hi }: { en: string; hi: string }) {
+export function Trans({ text }: { text: string }) {
   const { lang } = useLang();
-  return <>{lang === "hi" ? hi : en}</>;
+  return <>{t(lang, text)}</>;
 }

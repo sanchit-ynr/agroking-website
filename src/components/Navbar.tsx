@@ -9,27 +9,28 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { useLang } from "@/components/LanguageProvider";
+import { t } from "@/content/i18n";
 
 const navItems = [
-  { href: "/", labelEn: "Home", labelHi: "होम" },
-  { href: "/products", labelEn: "Products", labelHi: "उत्पाद" },
-  { href: "/applications", labelEn: "Applications", labelHi: "उपयोग" },
-  { href: "/about", labelEn: "About", labelHi: "हमारे बारे में" },
-  { href: "/support", labelEn: "Support", labelHi: "सहायता" },
-  { href: "/contact", labelEn: "Contact", labelHi: "संपर्क" },
+  { href: "/", label: "Home" },
+  { href: "/products", label: "Products" },
+  { href: "/applications", label: "Applications" },
+  { href: "/about", label: "About" },
+  { href: "/support", label: "Support" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const mobilePrimary = [
-  { href: "/", labelEn: "Home", labelHi: "होम" },
-  { href: "/products", labelEn: "Products", labelHi: "उत्पाद" },
-  { href: "/contact", labelEn: "Contact", labelHi: "संपर्क" },
+  { href: "/", label: "Home" },
+  { href: "/products", label: "Products" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const mobileSecondary = [
-  { href: "/applications", labelEn: "Applications", labelHi: "उपयोग" },
-  { href: "/about", labelEn: "About", labelHi: "हमारे बारे में" },
-  { href: "/support", labelEn: "Support", labelHi: "सहायता" },
-  { href: "/brochure", labelEn: "Brochure", labelHi: "ब्रॉशर" },
+  { href: "/applications", label: "Applications" },
+  { href: "/about", label: "About" },
+  { href: "/support", label: "Support" },
+  { href: "/brochure", label: "Brochure" },
 ];
 
 export function Navbar() {
@@ -45,7 +46,7 @@ export function Navbar() {
           </span>
           <div className="hidden sm:block">
             <p className="text-sm font-semibold text-ink">{site.shortName}</p>
-            <p className="text-xs text-slate">Premium Implements</p>
+            <p className="text-xs text-slate">{t(lang, "Premium Implements")}</p>
           </div>
         </Link>
 
@@ -57,7 +58,7 @@ export function Navbar() {
                 href={item.href}
                 className="transition-colors hover:text-ink"
               >
-                {lang === "hi" ? item.labelHi : item.labelEn}
+                {t(lang, item.label)}
               </Link>
             ))}
           </div>
@@ -65,7 +66,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Button href="/contact" variant="secondary" size="sm">
-            {lang === "hi" ? "कोटेशन" : "Get Quote"}
+            {t(lang, "Get Quote")}
           </Button>
           <ThemeToggle />
           <LanguageSwitch />
@@ -79,7 +80,7 @@ export function Navbar() {
                 href={item.href}
                 className="rounded-full px-3 py-2 text-xs font-semibold text-ink transition-colors hover:bg-white/70"
               >
-                {lang === "hi" ? item.labelHi : item.labelEn}
+                {t(lang, item.label)}
               </Link>
             ))}
             <motion.button
@@ -113,7 +114,7 @@ export function Navbar() {
                       onClick={() => setOpen(false)}
                       className="block px-2 py-1 text-xs font-semibold text-ink/90 transition-colors hover:text-ink"
                     >
-                      {lang === "hi" ? item.labelHi : item.labelEn}
+                      {t(lang, item.label)}
                     </Link>
                   ))}
                 </div>

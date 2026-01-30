@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import { useLang } from "@/components/LanguageProvider";
+import { t } from "@/content/i18n";
 
 interface SpecsTableProps {
   specs: Record<string, string>;
@@ -6,18 +8,23 @@ interface SpecsTableProps {
 }
 
 export function SpecsTable({ specs, className }: SpecsTableProps) {
+  const { lang } = useLang();
+
   return (
     <div className={cn("overflow-hidden rounded-xl border border-ink/10", className)}>
       <table className="w-full text-sm">
         <tbody>
-          {Object.entries(specs).map(([label, value]) => (
-            <tr key={label} className="border-b border-ink/10 last:border-none">
-              <td className="bg-smoke/50 px-4 py-3 font-medium text-ink">
-                {label.replace(/([A-Z])/g, " $1").trim()}
-              </td>
-              <td className="px-4 py-3 text-slate">{value}</td>
-            </tr>
-          ))}
+          {Object.entries(specs).map(([label, value]) => {
+            const formatted = label.replace(/([A-Z])/g, " $1").trim();
+            return (
+              <tr key={label} className="border-b border-ink/10 last:border-none">
+                <td className="bg-smoke/50 px-4 py-3 font-medium text-ink">
+                  {t(lang, formatted)}
+                </td>
+                <td className="px-4 py-3 text-slate">{value}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

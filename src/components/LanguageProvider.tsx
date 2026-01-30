@@ -1,8 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-
-type Lang = "en" | "hi";
+import type { Lang } from "@/content/i18n";
 
 type LangContextValue = {
   lang: Lang;
@@ -11,18 +10,22 @@ type LangContextValue = {
 
 const LangContext = createContext<LangContextValue | null>(null);
 
+const supported: Lang[] = ["en", "hi", "pa", "ta", "te", "mr", "gu", "bn", "kn", "ml"];
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("lang");
-    if (saved === "hi" || saved === "en") {
+    const saved = window.localStorage.getItem("lang") as Lang | null;
+    if (saved && supported.includes(saved)) {
       setLangState(saved);
       document.documentElement.lang = saved;
       return;
     }
+
     const browser = navigator.language.toLowerCase();
-    const next = browser.startsWith("hi") ? "hi" : "en";
+    const match = supported.find((code) => browser.startsWith(code));
+    const next = match ?? "en";
     setLangState(next);
     document.documentElement.lang = next;
   }, []);

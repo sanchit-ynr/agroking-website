@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Button";
+import { useLang } from "@/components/LanguageProvider";
+import { t } from "@/content/i18n";
 
 interface LeadFormProps {
   formType: "contact" | "support" | "quote";
@@ -21,6 +23,7 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
     "idle"
   );
   const [error, setError] = useState<string | null>(null);
+  const { lang } = useLang();
 
   const handleChange = (field: keyof typeof form) =>
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,9 +31,9 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
     };
 
   const validate = () => {
-    if (!form.name.trim()) return "Name is required.";
-    if (!form.email.includes("@")) return "Enter a valid email.";
-    if (!form.message.trim()) return "Message is required.";
+    if (!form.name.trim()) return t(lang, "Name is required.");
+    if (!form.email.includes("@")) return t(lang, "Enter a valid email.");
+    if (!form.message.trim()) return t(lang, "Message is required.");
     return null;
   };
 
@@ -58,48 +61,56 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
       <input type="hidden" value={formType} aria-hidden="true" />
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase text-slate">Name</label>
+          <label className="text-xs font-semibold uppercase text-slate">
+            {t(lang, "Name")}
+          </label>
           <input
             value={form.name}
             onChange={handleChange("name")}
             className="w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
-            placeholder="Full name"
-            aria-label="Name"
+            placeholder={t(lang, "Full name")}
+            aria-label={t(lang, "Name")}
             required
           />
         </div>
         <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase text-slate">Email</label>
+          <label className="text-xs font-semibold uppercase text-slate">
+            {t(lang, "Email")}
+          </label>
           <input
             value={form.email}
             onChange={handleChange("email")}
             className="w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
-            placeholder="Email address"
-            aria-label="Email"
+            placeholder={t(lang, "Email address")}
+            aria-label={t(lang, "Email")}
             required
           />
         </div>
       </div>
       {!compact ? (
         <div className="space-y-2">
-          <label className="text-xs font-semibold uppercase text-slate">Phone</label>
+          <label className="text-xs font-semibold uppercase text-slate">
+            {t(lang, "Phone")}
+          </label>
           <input
             value={form.phone}
             onChange={handleChange("phone")}
             className="w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
-            placeholder="Phone number"
-            aria-label="Phone"
+            placeholder={t(lang, "Phone number")}
+            aria-label={t(lang, "Phone")}
           />
         </div>
       ) : null}
       <div className="space-y-2">
-        <label className="text-xs font-semibold uppercase text-slate">Message</label>
+        <label className="text-xs font-semibold uppercase text-slate">
+          {t(lang, "Message")}
+        </label>
         <textarea
           value={form.message}
           onChange={handleChange("message")}
           className="min-h-[120px] w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
-          placeholder="Tell us about your requirement"
-          aria-label="Message"
+          placeholder={t(lang, "Tell us about your requirement")}
+          aria-label={t(lang, "Message")}
           required
         />
       </div>
@@ -110,11 +121,11 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
       ) : null}
       {status === "success" ? (
         <p className="text-sm text-emerald-700" role="status">
-          Thank you. Our team will respond within 24 hours.
+          {t(lang, "Thank you. Our team will respond within 24 hours.")}
         </p>
       ) : null}
       <Button type="submit" variant="primary">
-        {status === "loading" ? "Sending..." : "Submit"}
+        {status === "loading" ? t(lang, "Sending...") : t(lang, "Submit")}
       </Button>
     </form>
   );
