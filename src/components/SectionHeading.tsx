@@ -16,7 +16,7 @@ export function SectionHeading({
   return (
     <div className={cn("space-y-3", className)}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-leaf">
           {eyebrow}
         </p>
       ) : null}

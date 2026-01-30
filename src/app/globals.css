@@ -3,6 +3,26 @@
 
 :root {
   color-scheme: light;
+  --sand: 244 244 240;
+  --ink: 20 22 20;
+  --charcoal: 36 40 36;
+  --gold: 240 122 28;
+  --bronze: 154 79 20;
+  --slate: 108 114 106;
+  --smoke: 234 234 226;
+  --leaf: 46 125 60;
+}
+
+.theme-dark {
+  color-scheme: dark;
+  --sand: 18 26 22;
+  --ink: 235 240 233;
+  --charcoal: 40 52 44;
+  --gold: 255 140 26;
+  --bronze: 214 111 28;
+  --slate: 156 167 158;
+  --smoke: 32 40 34;
+  --leaf: 99 176 110;
 }
 
 @layer base {
@@ -31,6 +51,6 @@
   }
 
   .glass {
-    @apply bg-white/55 backdrop-blur-2xl border border-white/40 shadow-soft;
+    @apply bg-sand/70 backdrop-blur-2xl border border-sand/50 shadow-soft;
   }
 }

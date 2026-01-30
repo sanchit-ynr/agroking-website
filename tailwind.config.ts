@@ -5,13 +5,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#1B1C19",
-        charcoal: "#2A2D2A",
-        sand: "#F4F4F0",
-        gold: "#F07A1C",
-        bronze: "#9A4F14",
-        slate: "#6C726A",
-        smoke: "#EAEAE2",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        charcoal: "rgb(var(--charcoal) / <alpha-value>)",
+        sand: "rgb(var(--sand) / <alpha-value>)",
+        gold: "rgb(var(--gold) / <alpha-value>)",
+        bronze: "rgb(var(--bronze) / <alpha-value>)",
+        slate: "rgb(var(--slate) / <alpha-value>)",
+        smoke: "rgb(var(--smoke) / <alpha-value>)",
+        leaf: "rgb(var(--leaf) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
