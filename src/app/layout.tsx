@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
-import { MobileDock } from "@/components/MobileDock";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
 
@@ -45,8 +44,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body className="font-sans">
         <Navbar />
-        <main className="overflow-x-hidden pb-24 md:pb-0">{children}</main>
-        <MobileDock />
+        <main className="overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>
