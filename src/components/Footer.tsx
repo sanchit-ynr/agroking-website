@@ -1,16 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import { site } from "@/content/site";
+import { useLang } from "@/components/LanguageProvider";
 
 const links = [
-  { href: "/products", label: "Products" },
-  { href: "/applications", label: "Applications" },
-  { href: "/about", label: "About" },
-  { href: "/support", label: "Support" },
-  { href: "/contact", label: "Contact" },
-  { href: "/brochure", label: "Brochure" },
+  { href: "/products", labelEn: "Products", labelHi: "उत्पाद" },
+  { href: "/applications", labelEn: "Applications", labelHi: "उपयोग" },
+  { href: "/about", labelEn: "About", labelHi: "हमारे बारे में" },
+  { href: "/support", labelEn: "Support", labelHi: "सहायता" },
+  { href: "/contact", labelEn: "Contact", labelHi: "संपर्क" },
+  { href: "/brochure", labelEn: "Brochure", labelHi: "ब्रॉशर" },
 ];
 
 export function Footer() {
+  const { lang } = useLang();
+
   return (
     <footer className="border-t border-ink/10 bg-ink text-sand">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
@@ -20,19 +25,19 @@ export function Footer() {
           <p className="text-sm text-sand/60">{site.contact.address}</p>
         </div>
         <div className="space-y-3 text-sm">
-          <p className="font-semibold text-sand">Quick Links</p>
+          <p className="font-semibold text-sand">{lang === "hi" ? "त्वरित लिंक" : "Quick Links"}</p>
           <ul className="space-y-2 text-sand/70">
             {links.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="hover:text-sand">
-                  {link.label}
+                  {lang === "hi" ? link.labelHi : link.labelEn}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="space-y-3 text-sm">
-          <p className="font-semibold text-sand">Product Lines</p>
+          <p className="font-semibold text-sand">{lang === "hi" ? "उत्पाद लाइन" : "Product Lines"}</p>
           <ul className="space-y-2 text-sand/70">
             {site.productCategories.map((category) => (
               <li key={category.id}>{category.name}</li>
@@ -40,7 +45,7 @@ export function Footer() {
           </ul>
         </div>
         <div className="space-y-3 text-sm">
-          <p className="font-semibold text-sand">Contact</p>
+          <p className="font-semibold text-sand">{lang === "hi" ? "संपर्क" : "Contact"}</p>
           <ul className="space-y-2 text-sand/70">
             <li>{site.contact.phone}</li>
             {site.contact.phoneAlt ? <li>{site.contact.phoneAlt}</li> : null}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductsFilter } from "@/components/ProductsFilter";
 import { FadeIn } from "@/components/FadeIn";
+import { Trans } from "@/components/Trans";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -16,17 +17,21 @@ export default function ProductsPage() {
         <FadeIn>
           <div className="hidden md:block">
             <SectionHeading
-              eyebrow="Products"
-              title="Premium implements built for global farms"
-              subtitle="Filter by category or search by product name."
+              eyebrow={<Trans en="Products" hi="उत्पाद" />}
+              title={<Trans en="Premium implements built for global farms" hi="वैश्विक खेतों के लिए प्रीमियम उपकरण" />}
+              subtitle={<Trans en="Filter by category or search by product name." hi="श्रेणी चुनें या उत्पाद खोजें।" />}
             />
           </div>
           <div className="md:hidden">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">Products</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">
+              <Trans en="Products" hi="उत्पाद" />
+            </p>
             <h1 className="mt-2 font-display text-2xl font-semibold text-ink">
-              Agroking Implement Store
+              <Trans en="Agroking Implement Store" hi="Agroking उत्पाद स्टोर" />
             </h1>
-            <p className="mt-2 text-sm text-slate">Browse implements by category and HP range.</p>
+            <p className="mt-2 text-sm text-slate">
+              <Trans en="Browse implements by category and HP range." hi="श्रेणी और HP के अनुसार देखें।" />
+            </p>
           </div>
         </FadeIn>
 
@@ -36,14 +41,20 @@ export default function ProductsPage() {
 
         <FadeIn delay={0.2}>
           <div className="rounded-2xl border border-ink/10 bg-white p-6 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">Brochures</p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-ink">Need detailed specs?</h2>
-            <p className="mt-2 text-sm text-slate">Browse the brochure library for every implement.</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">
+              <Trans en="Brochures" hi="ब्रॉशर" />
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-ink">
+              <Trans en="Need detailed specs?" hi="विस्तृत स्पेसिफिकेशन चाहिए?" />
+            </h2>
+            <p className="mt-2 text-sm text-slate">
+              <Trans en="Browse the brochure library for every implement." hi="हर उत्पाद के ब्रॉशर देखें।" />
+            </p>
             <Link
               href="/brochure"
               className="mt-4 inline-flex rounded-full border border-ink/10 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-ink"
             >
-              View brochures
+              <Trans en="View brochures" hi="ब्रॉशर देखें" />
             </Link>
           </div>
         </FadeIn>

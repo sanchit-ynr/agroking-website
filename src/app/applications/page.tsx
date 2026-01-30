@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Card } from "@/components/Card";
 import { FadeIn } from "@/components/FadeIn";
+import { Trans } from "@/components/Trans";
 
 export const metadata: Metadata = {
   title: "Applications",
@@ -15,9 +16,14 @@ export default function ApplicationsPage() {
       <div className="mx-auto max-w-6xl space-y-12 px-6">
         <FadeIn>
           <SectionHeading
-            eyebrow="Applications"
-            title="Implements tailored to every stage of cultivation"
-            subtitle="Select from curated solutions across soil prep, tillage, planting, and transport."
+            eyebrow={<Trans en="Applications" hi="उपयोग" />}
+            title={<Trans en="Implements tailored to every stage of cultivation" hi="हर चरण के लिए उपयुक्त उपकरण" />}
+            subtitle={
+              <Trans
+                en="Select from curated solutions across soil prep, tillage, planting, and transport."
+                hi="मिट्टी तैयारी, जुताई, बुवाई और परिवहन के लिए समाधान।"
+              />
+            }
           />
         </FadeIn>
         <FadeIn>
