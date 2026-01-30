@@ -32,11 +32,7 @@ Update this single file to change company details, products, testimonials, FAQs,
 
 ## Forms
 
-Forms submit to the API route:
-
-- `POST /api/lead`
-
-This is a placeholder endpoint with basic validation. Replace with email/CRM integration as needed.
+Forms are static-export friendly with client-side validation only. Hook into a third-party service (Formspree, Resend, etc.) if needed.
 
 ## SEO
 
@@ -51,19 +47,22 @@ This is a placeholder endpoint with basic validation. Replace with email/CRM int
 1. Push to a Git repo
 2. Import into Vercel
 3. Build command: `npm run build`
-4. Output: `.next`
+4. Output: `out`
 
-### Cloudflare Pages (Next on Pages)
+### Cloudflare Pages
 
-Use the Next.js on Pages adapter, or export static assets.
+1. Build command: `npm run build`
+2. Output directory: `out`
 
 ### Static Export
 
-If you want a static site:
+Static export is enabled in `next.config.ts`. Run:
 
-1. Add `output: "export"` to `next.config.ts`
-2. Run `npm run build`
-3. Deploy the `out` directory
+```bash
+npm run build
+```
+
+Deploy the generated `out` directory.
 
 ## Assets
 

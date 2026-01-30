@@ -34,7 +34,7 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
     return null;
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("loading");
     setError(null);
@@ -46,27 +46,16 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
       return;
     }
 
-    try {
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, formType }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit");
-      }
-
+    // Static export placeholder: no network calls.
+    setTimeout(() => {
       setStatus("success");
       setForm(initialState);
-    } catch {
-      setStatus("error");
-      setError("Submission failed. Please try again.");
-    }
+    }, 300);
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <input type="hidden" value={formType} aria-hidden="true" />
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-2">
           <label className="text-xs font-semibold uppercase text-slate">Name</label>
