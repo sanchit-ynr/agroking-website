@@ -1,69 +1,31 @@
-# Agroking Implements Industries Website
+# Agroking Implements Industries
 
-Premium, export-ready marketing site built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+A static-export marketing site for Agroking Implements Industries built with Next.js 16 (App Router), TypeScript, Tailwind CSS, and Framer Motion.
 
-## Install & Run
-
+## Getting Started
 ```bash
 npm install
 npm run dev
 ```
-
-Open `http://localhost:3000`.
+Visit http://localhost:3000.
 
 ## Content Editing
-
-All site copy and product data live in:
-
-- `src/content/site.ts`
-
-Update this single file to change company details, products, testimonials, FAQs, and contact info.
+All copy, product data, FAQs, testimonials, and contact details are defined in `src/content/site.ts`. Translations are in `src/content/i18n.ts`.
 
 ## Routes
-
 - `/` Home
-- `/products` Product catalog with filters
-- `/products/[slug]` Product detail pages
-- `/applications` Industries & applications
-- `/about` Company overview
-- `/support` FAQs + service request
+- `/products` Catalog + filters
+- `/products/[slug]` Product details
+- `/applications` Industry uses
+- `/about` Company profile
+- `/support` FAQs and service request
 - `/contact` Contact form
-- `/brochure` Brochure download placeholder
+- `/brochure` Brochure downloads (placeholder)
 
-## Forms
+## Documentation
+- Architecture: `ARCHITECTURE.md`
+- Deployment: `DEPLOYMENT.md`
 
-Forms are static-export friendly with client-side validation only. Hook into a third-party service (Formspree, Resend, etc.) if needed.
-
-## SEO
-
-- Dynamic metadata per route
-- OpenGraph defaults in `src/app/layout.tsx`
-- `src/app/sitemap.ts` and `src/app/robots.ts`
-
-## Deploy
-
-### Vercel
-
-1. Push to a Git repo
-2. Import into Vercel
-3. Build command: `npm run build`
-4. Output: `out`
-
-### Cloudflare Pages
-
-1. Build command: `npm run build`
-2. Output directory: `out`
-
-### Static Export
-
-Static export is enabled in `next.config.ts`. Run:
-
-```bash
-npm run build
-```
-
-Deploy the generated `out` directory.
-
-## Assets
-
-Placeholder images are in `public/images`. Replace with real photography or product renders.
+## Notes
+- Static export is enabled (`output: "export"`). No API routes or server actions are used.
+- Placeholder images live in `public/images`; replace as needed.
