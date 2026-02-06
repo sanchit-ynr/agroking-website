@@ -1,6 +1,8 @@
 # Agroking Implements Industries
 
-A static-export marketing site for Agroking Implements Industries built with Next.js 16 (App Router), TypeScript, Tailwind CSS, and Framer Motion.
+Live site: https://agroking-website.pages.dev/
+
+A static-export marketing site built with Next.js 16 (App Router), TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Getting Started
 ```bash
