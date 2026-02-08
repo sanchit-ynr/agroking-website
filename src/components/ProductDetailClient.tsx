@@ -60,7 +60,7 @@ export function ProductDetailClient({ product, category }: ProductDetailClientPr
               <h3 className="text-lg font-semibold text-ink"><Trans text="Use cases" /></h3>
               <ul className="grid gap-2 text-sm text-slate md:grid-cols-2">
                 {product.useCases.map((useCase) => (
-                  <li key={t(lang, useCase)} className="rounded-lg border border-ink/10 bg-white px-4 py-2">
+                  <li key={t(lang, useCase)} className="rounded-lg border border-ink/10 bg-smoke px-4 py-2">
                     {t(lang, useCase)}
                   </li>
                 ))}
@@ -69,7 +69,7 @@ export function ProductDetailClient({ product, category }: ProductDetailClientPr
           </FadeIn>
 
           <FadeIn delay={0.25}>
-            <div className="rounded-2xl border border-ink/10 bg-white p-6">
+            <div className="rounded-2xl border border-ink/10 bg-smoke p-6">
               <p className="text-sm font-semibold uppercase text-slate"><Trans text="Compatible tractor HP" /></p>
               <p className="mt-2 text-2xl font-semibold text-ink">{product.hpRange}</p>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -85,7 +85,7 @@ export function ProductDetailClient({ product, category }: ProductDetailClientPr
 
         <FadeIn delay={0.1}>
           <aside className="space-y-6">
-            <div className="sticky top-24 space-y-6 rounded-2xl border border-ink/10 bg-white p-6 shadow-soft">
+            <div className="sticky top-24 space-y-6 rounded-2xl border border-ink/10 bg-smoke p-6 shadow-soft">
               <div>
                 <h3 className="text-lg font-semibold text-ink"><Trans text="Request a quote" /></h3>
                 <p className="text-sm text-slate">

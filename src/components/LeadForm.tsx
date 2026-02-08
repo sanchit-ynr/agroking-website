@@ -67,7 +67,7 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
           <input
             value={form.name}
             onChange={handleChange("name")}
-            className="w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
+            className="w-full rounded-lg border border-ink/10 bg-smoke px-4 py-2 text-sm"
             placeholder={t(lang, "Full name")}
             aria-label={t(lang, "Name")}
             required
@@ -80,7 +80,7 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
           <input
             value={form.email}
             onChange={handleChange("email")}
-            className="w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
+            className="w-full rounded-lg border border-ink/10 bg-smoke px-4 py-2 text-sm"
             placeholder={t(lang, "Email address")}
             aria-label={t(lang, "Email")}
             required
@@ -95,7 +95,7 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
           <input
             value={form.phone}
             onChange={handleChange("phone")}
-            className="w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
+            className="w-full rounded-lg border border-ink/10 bg-smoke px-4 py-2 text-sm"
             placeholder={t(lang, "Phone number")}
             aria-label={t(lang, "Phone")}
           />
@@ -108,7 +108,7 @@ export function LeadForm({ formType, compact }: LeadFormProps) {
         <textarea
           value={form.message}
           onChange={handleChange("message")}
-          className="min-h-[120px] w-full rounded-lg border border-ink/10 bg-white px-4 py-2 text-sm"
+          className="min-h-[120px] w-full rounded-lg border border-ink/10 bg-smoke px-4 py-2 text-sm"
           placeholder={t(lang, "Tell us about your requirement")}
           aria-label={t(lang, "Message")}
           required

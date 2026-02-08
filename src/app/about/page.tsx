@@ -56,7 +56,7 @@ export default function AboutPage() {
 
         <FadeIn>
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="rounded-2xl border border-ink/10 bg-white p-6">
+            <div className="rounded-2xl border border-ink/10 bg-smoke p-6">
               <Image
                 src="/images/factory-placeholder.svg"
                 alt="Agroking factory floor"

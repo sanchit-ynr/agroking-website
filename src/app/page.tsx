@@ -34,7 +34,7 @@ export default function HomePage() {
               </div>
               <div className="grid gap-4 pt-6 md:grid-cols-3">
                 {site.metrics.map((metric) => (
-                  <div key={metric.label} className="rounded-xl border border-ink/10 bg-white p-4">
+                  <div key={metric.label} className="rounded-xl border border-ink/10 bg-smoke p-4">
                     <p className="text-2xl font-semibold text-ink">{metric.value}</p>
                     <p className="text-xs uppercase tracking-wide text-slate"><Trans text={metric.label} /></p>
                   </div>
@@ -46,7 +46,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="absolute -left-8 -top-6 h-32 w-32 rounded-full bg-gold/20 blur-2xl" />
               <div className="absolute -bottom-10 right-0 h-40 w-40 rounded-full bg-ink/10 blur-2xl" />
-              <div className="relative rounded-3xl border border-ink/10 bg-white p-6 shadow-lift">
+              <div className="relative rounded-3xl border border-ink/10 bg-smoke p-6 shadow-lift">
                 <Image
                   src="/images/hero-placeholder.svg"
                   alt="Agroking premium implements"
@@ -66,7 +66,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-smoke">
         <div className="mx-auto max-w-6xl space-y-10 px-6">
           <SectionHeading
             eyebrow={<Trans text="Product portfolio" />}
@@ -120,7 +120,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-smoke">
         <div className="mx-auto max-w-6xl space-y-10 px-6">
           <SectionHeading
             eyebrow={<Trans text="Process" />}

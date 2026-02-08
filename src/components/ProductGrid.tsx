@@ -20,7 +20,7 @@ export function ProductGrid({ products }: ProductGridProps) {
         <Link
           key={product.slug}
           href={`/products/${product.slug}`}
-          className="group rounded-2xl border border-ink/10 bg-white p-4 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
+          className="group rounded-2xl border border-ink/10 bg-smoke p-4 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
         >
           <div className="overflow-hidden rounded-xl border border-ink/10">
             <Image

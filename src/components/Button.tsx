@@ -18,7 +18,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   primary:
     "border-gold bg-gold text-ink hover:-translate-y-0.5 hover:shadow-lift",
   secondary:
-    "border-ink/15 bg-white text-ink hover:-translate-y-0.5 hover:shadow-soft",
+    "border-ink/15 bg-smoke text-ink hover:-translate-y-0.5 hover:shadow-soft",
   ghost: "border-transparent bg-transparent text-ink hover:bg-ink/5",
 };
 

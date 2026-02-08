@@ -78,7 +78,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-xs font-semibold text-ink transition-colors hover:bg-white/70"
+                className="rounded-full px-3 py-2 text-xs font-semibold text-ink transition-colors hover:bg-smoke/70"
               >
                 {t(lang, item.label)}
               </Link>

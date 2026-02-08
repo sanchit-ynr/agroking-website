@@ -64,11 +64,11 @@ export function ProductsFilter() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={t(lang, "Search products")}
-            className="w-full rounded-full border border-ink/10 bg-white px-4 py-2 text-sm text-ink placeholder:text-slate focus:border-gold focus:outline-none"
+            className="w-full rounded-full border border-ink/10 bg-smoke px-4 py-2 text-sm text-ink placeholder:text-slate focus:border-gold focus:outline-none"
           />
         </div>
 
-        <div className="flex items-center justify-between gap-4 rounded-2xl border border-ink/10 bg-white px-4 py-3 md:hidden">
+        <div className="flex items-center justify-between gap-4 rounded-2xl border border-ink/10 bg-smoke px-4 py-3 md:hidden">
           <Link href="/" className="flex items-center gap-2">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-xs text-sand">
               {site.shortName.slice(0, 1)}
@@ -102,7 +102,7 @@ export function ProductsFilter() {
       </div>
 
       {filterOpen ? (
-        <div className="rounded-2xl border border-ink/10 bg-white p-4 md:hidden">
+        <div className="rounded-2xl border border-ink/10 bg-smoke p-4 md:hidden">
           <div className="mb-3 text-xs font-semibold uppercase text-slate">
             {t(lang, "Search")}
           </div>
@@ -110,7 +110,7 @@ export function ProductsFilter() {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={t(lang, "Search products")}
-            className="w-full rounded-full border border-ink/10 bg-white px-4 py-2 text-sm text-ink placeholder:text-slate focus:border-gold focus:outline-none"
+            className="w-full rounded-full border border-ink/10 bg-smoke px-4 py-2 text-sm text-ink placeholder:text-slate focus:border-gold focus:outline-none"
           />
           <div className="mt-4 flex flex-wrap gap-2">
             <button
@@ -143,7 +143,7 @@ export function ProductsFilter() {
       ) : null}
 
       {menuOpen ? (
-        <div className="rounded-2xl border border-ink/10 bg-white p-4 md:hidden">
+        <div className="rounded-2xl border border-ink/10 bg-smoke p-4 md:hidden">
           <p className="text-xs font-semibold uppercase text-slate">
             {lang === "hi" ? "श्रेणियाँ" : "Categories"}
           </p>

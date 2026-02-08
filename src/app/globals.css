@@ -34,6 +34,10 @@
     @apply bg-sand text-ink antialiased;
     font-feature-settings: "ss01" on, "ss02" on;
     overflow-x: hidden;
+    background-image:
+      radial-gradient(1200px 600px at 0% -10%, rgb(var(--leaf) / 0.12), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgb(var(--gold) / 0.1), transparent 60%);
+    background-attachment: fixed;
   }
 
   ::selection {

@@ -40,7 +40,7 @@ export default function ProductsPage() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="rounded-2xl border border-ink/10 bg-white p-6 text-center">
+          <div className="rounded-2xl border border-ink/10 bg-smoke p-6 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">
               <Trans text="Brochures" />
             </p>

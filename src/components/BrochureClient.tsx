@@ -16,7 +16,7 @@ export function BrochureClient() {
         {site.products.map((product) => (
           <div
             key={product.slug}
-            className="flex flex-col items-start justify-between gap-4 rounded-xl border border-ink/10 bg-white p-5 md:flex-row md:items-center"
+            className="flex flex-col items-start justify-between gap-4 rounded-xl border border-ink/10 bg-smoke p-5 md:flex-row md:items-center"
           >
             <div>
               <p className="text-sm font-semibold text-ink">{t(lang, product.name)}</p>

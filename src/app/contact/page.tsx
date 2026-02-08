@@ -59,7 +59,7 @@ export default function ContactPage() {
                 </h3>
                 <p className="mt-3 text-sm text-slate"><Trans text={site.contact.hours} /></p>
               </Card>
-              <div className="rounded-2xl border border-ink/10 bg-white p-6">
+              <div className="rounded-2xl border border-ink/10 bg-smoke p-6">
                 <p className="text-xs font-semibold uppercase text-slate">
                   <Trans text="Map placeholder" />
                 </p>

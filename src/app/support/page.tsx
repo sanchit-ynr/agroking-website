@@ -74,7 +74,7 @@ export default function SupportPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-soft">
+            <div className="rounded-2xl border border-ink/10 bg-smoke p-6 shadow-soft">
               <h3 className="text-lg font-semibold text-ink">
                 <Trans text="Service request" />
               </h3>
